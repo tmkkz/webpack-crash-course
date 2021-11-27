@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
-
+const outputPath = path.resolve(__dirname, "dist");
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
   : "style-loader";
@@ -13,11 +13,12 @@ const stylesHandler = isProduction
 const config = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: outputPath,
   },
   devServer: {
     open: true,
     host: "localhost",
+    contentBase: outputPath 
   },
   plugins: [
     new HtmlWebpackPlugin({
