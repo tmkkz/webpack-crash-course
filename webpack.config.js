@@ -18,7 +18,6 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-    contentBase: outputPath 
   },
   plugins: [
     new HtmlWebpackPlugin({
