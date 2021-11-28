@@ -14,6 +14,7 @@ const config = {
   entry: "./src/index.js",
   output: {
     path: outputPath,
+    assetModuleFilename: 'images/[hash][ext][query]'
   },
   devServer: {
     open: true,
