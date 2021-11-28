@@ -1,10 +1,7 @@
-import "./style.css";
-import yaruo from "./yaruo.png";
+import React from 'react';
+import ReactDOM from 'react-dom'
 
-console.log("Hello World!");
-
-document.body.classList.add('haikei');
-
-const image = new Image();
-image.src = yaruo;
-document.body.appendChild(image);
+ReactDOM.render(
+  <div>Hello react</div>,
+  document.getElementById('root')
+)
