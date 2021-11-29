@@ -4,6 +4,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 const outputPath = path.resolve(__dirname, "dist");
@@ -26,7 +27,7 @@ const config = {
       template: "./src/index.html",
       filename: "index.html"
     }),
-
+    new CssMinimizerPlugin()
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
@@ -64,7 +65,8 @@ const config = {
             drop_console: true
           }
         }
-      })
+      }),
+      new CssMinimizerPlugin()
     ]
   }
 };
